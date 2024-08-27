@@ -21,9 +21,13 @@ li {
 
 li:not(.sidebar ul li) {
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  padding: 1rem;
 }
 
 .container {
+  background-color: var(--secondary-color);
+
   height: inherit;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -45,12 +49,14 @@ li:not(.sidebar ul li) {
 
 /* header start */
 .header {
+  background-color: white;
   padding: 1rem;
   grid-area: header;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "header-search header-user-setting" "header-user-greeting header-shortcuts";
+  box-shadow: rgba(0, 0, 0, 0.205) 0 2.4px 4.2px;
 }
 
 .user-settings {
@@ -80,18 +86,19 @@ li:not(.sidebar ul li) {
 
 /* main start */
 .main-content {
-  padding: 1rem;
+  padding: 2rem 1.5rem 4rem;
   grid-area: main;
-  background-color: var(--secondary-color);
 
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "project-list announcements" "project-list trending";
-  gap: 1rem;
+  grid-template-areas: "project-list announcements-trending";
+  gap: 1.5rem;
 }
 
 .project-list {
+  display: flex;
+  flex-direction: column;
+
   grid-area: project-list;
 }
 
@@ -99,25 +106,47 @@ li:not(.sidebar ul li) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.project-list ul li {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  border-left: 0.5rem solid var(--card-color);
+}
+
+.announcements-trending {
+  grid-area: announcements-trending;
+  display: grid;
+  gap: 2rem;
 }
 
 .announcements {
-  grid-area: announcements;
+  display: flex;
+  flex-direction: column;
 }
 
 .announcements ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex: 1;
 }
 
 .trending {
-  grid-area: trending;
+  display: flex;
+  flex-direction: column;
 }
 
 .trending ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex: 1;
 }
