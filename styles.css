@@ -28,11 +28,11 @@ li:not(.sidebar ul li) {
 .container {
   background-color: var(--secondary-color);
 
-  height: inherit;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: auto;
-  grid-template-areas: "sidebar header" "sidebar main";
+  grid-template-areas: "sidebar main-body";
 }
 
 .logo {
@@ -76,6 +76,15 @@ li:not(.sidebar ul li) {
   width: 24px;
   justify-self: center;
   align-self: center;
+}
+
+.main-body {
+  display: grid;
+  grid-area: main-body;
+  height: 100%;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas: "header" "main";
+  overflow: auto;
 }
 
 /* header start */
@@ -176,6 +185,7 @@ li:not(.sidebar ul li) {
   grid-template-columns: 3fr 1fr;
   grid-template-areas: "project-list announcements-trending";
   gap: 1.5rem;
+  overflow: auto;
 }
 
 .main-content h4 {
