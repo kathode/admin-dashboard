@@ -95,6 +95,10 @@ li:not(.sidebar ul li) {
   gap: 1.5rem;
 }
 
+.main-content h4 {
+  margin-bottom: 0.75rem;
+}
+
 .project-list {
   display: flex;
   flex-direction: column;
@@ -108,13 +112,30 @@ li:not(.sidebar ul li) {
   grid-template-rows: repeat(3, 1fr);
   gap: 1.5rem;
   flex: 1;
+  line-height: 1.4;
 }
 
-.project-list ul li {
+.project-list > ul > li {
   border-radius: 0.5rem;
-  overflow: hidden;
-
   border-left: 0.5rem solid var(--card-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-list > ul > li > h5 {
+  font-size: 1rem;
+}
+
+.project-list > ul > li > p {
+  color: gray;
+  flex: 1;
+}
+
+.project-list > ul > li > div {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
 }
 
 .announcements-trending {
@@ -128,13 +149,17 @@ li:not(.sidebar ul li) {
   flex-direction: column;
 }
 
-.announcements ul {
+.announcements > ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   border-radius: 0.5rem;
   overflow: hidden;
   flex: 1;
+}
+
+.announcements > ul > li:not(:last-child) {
+  border-bottom: 1px solid lightgray;
 }
 
 .trending {
