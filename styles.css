@@ -30,16 +30,20 @@ li:not(.sidebar ul li) {
 
   height: inherit;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: auto;
   grid-template-areas: "sidebar header" "sidebar main";
 }
 
 .logo {
   display: grid;
-  gap: 0.5rem;
-
+  align-items: center;
   grid-template-columns: 1fr 2fr;
+}
+
+.logo > svg {
+  width: 50px;
+  place-self: center;
 }
 
 .sidebar {
@@ -63,9 +67,15 @@ li:not(.sidebar ul li) {
 
 .sidebar > ul > li {
   display: grid;
-  gap: 0.5rem;
+  align-items: center;
 
   grid-template-columns: 1fr 2fr;
+}
+
+.sidebar > ul > li > svg {
+  width: 24px;
+  justify-self: center;
+  align-self: center;
 }
 
 /* header start */
@@ -81,9 +91,17 @@ li:not(.sidebar ul li) {
   box-shadow: rgba(0, 0, 0, 0.205) 0 2.4px 4.2px;
 }
 
+.header img {
+  border-radius: 100%;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
 .user-settings {
   grid-area: header-user-setting;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -96,6 +114,11 @@ li:not(.sidebar ul li) {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.user-greeting img {
+  width: 4rem;
+  height: 4rem;
 }
 
 .user-greeting div {
@@ -113,14 +136,12 @@ li:not(.sidebar ul li) {
 }
 
 .shortcuts button {
+  align-self: center;
+  height: 40px;
   padding: 0.5rem 1rem;
   border-radius: 1.25rem;
   border: none;
-
   font-weight: 600;
-}
-
-.shortcuts button {
   color: white;
   background-color: var(--primary-color);
 }
@@ -128,8 +149,14 @@ li:not(.sidebar ul li) {
 .search {
   grid-area: header-search;
   display: flex;
+  align-items: center;
 
   gap: 1rem;
+}
+
+.header svg,
+.main-content svg {
+  width: 20px;
 }
 
 .search input {
@@ -191,7 +218,7 @@ li:not(.sidebar ul li) {
 .project-list > ul > li > div {
   display: flex;
   justify-content: end;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .announcements-trending {
@@ -244,6 +271,12 @@ li:not(.sidebar ul li) {
 .trending li {
   display: flex;
   gap: 1rem;
+}
+
+.trending img {
+  border-radius: 100%;
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
 .trending .tag {
