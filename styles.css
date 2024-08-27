@@ -158,6 +158,15 @@ li:not(.sidebar ul li) {
   flex: 1;
 }
 
+.announcements h6 {
+  font-size: 0.8rem;
+}
+
+.announcements p {
+  font-size: 0.75rem;
+  color: gray;
+}
+
 .announcements > ul > li:not(:last-child) {
   border-bottom: 1px solid lightgray;
 }
