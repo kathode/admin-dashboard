@@ -184,3 +184,17 @@ li:not(.sidebar ul li) {
   overflow: hidden;
   flex: 1;
 }
+
+.trending li {
+  display: flex;
+  gap: 1rem;
+}
+
+.trending .tag {
+  font-size: 0.9rem;
+}
+
+.trending .title {
+  color: gray;
+  font-size: 0.75rem;
+}
